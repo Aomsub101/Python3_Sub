@@ -1,21 +1,21 @@
+"""Flying circle with pygame"""
 import pygame
 
 class Circle:
     """
     Circle class
     """
-    def __init__(self, radius, x, y, width=100, height=100) -> None:
+    def __init__(self, radius, x, y, color) -> None:
         self.radius = radius
         self.x = x
         self.y = y
-        self.window_width = width
-        self.window_height = height
+        self.color = color
 
     def draw(self, screen) -> None:
         """
         Draw circle at (x, y)
         """
-        pygame.draw.circle(screen, (0, 255, 0), (self.x, self.y), self.radius)
+        pygame.draw.circle(screen, self.color, (self.x, self.y), self.radius)
 
     def move(self, shift_x, shift_y) -> None:
         """
@@ -28,13 +28,14 @@ if __name__ == "__main__":
     window_width = 500
     window_height = 500
 
-    c = Circle(10, 10, 50, window_width, window_height)
+    color = (0, 255, 0)
+    c = Circle(10, 10, 50, color)
 
     pygame.init()
 
-    screen = pygame.display.set_mode((window_width, window_height))
-    pygame.display.set_caption("Flying Circle")
-    clock = pygame.time.Clock()
+    screen = pygame.display.set_mode((window_width, window_height)) # set screen size
+    pygame.display.set_caption("Flying Circle") # set the title
+    clock = pygame.time.Clock() # Clock, I guess.
 
     vx = 1
     vy = 1
@@ -45,17 +46,22 @@ if __name__ == "__main__":
             if event.type == pygame.QUIT:
                 running = False
                 break
+        print(f"x:{c.x}, y:{c.y}") # print current position
 
-        if c.x == c.window_width or c.x == 0:
+        if c.x > window_width - c.radius or c.x < c.radius:
             vx = -vx
-        if c.y == c.window_height or c.y == 0:
+        if c.y > window_height - c.radius or c.y < c.radius:
             vy = -vy
 
-        print(f"x:{c.x}, y:{c.y}")
-        screen.fill((255, 255, 255))
+        screen.fill((255, 255, 255)) # fill with white
+
         c.move(vx,vy)
         c.draw(screen)
+
         pygame.display.flip()
-        clock.tick(144)
+
+        clock.tick(60) # set to 60 fps
 
     pygame.quit()
+
+# End of file
