@@ -28,6 +28,7 @@ if __name__ == "__main__":
     window_width = 500
     window_height = 500
 
+    bg_color = (255, 255, 255)
     color = (0, 255, 0)
     c = Circle(10, 10, 50, color)
 
@@ -53,7 +54,7 @@ if __name__ == "__main__":
         if c.y > window_height - c.radius or c.y < c.radius:
             vy = -vy
 
-        screen.fill((255, 255, 255)) # fill with white
+        screen.fill(bg_color) # fill with white
 
         c.move(vx,vy)
         c.draw(screen)
