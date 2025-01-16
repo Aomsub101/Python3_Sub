@@ -18,3 +18,7 @@ Our shorterm goal - Putting together between computer graphic and networking.
 - I did make client and server can communicate to each other.
 - I learn about parallel programming using thread library in python.
 - with thread, I try to implement that with socket-based chat to make it more real-time.
+
+## Day 4
+- Today, we mainly discuss about multiple users chat.
+- We also assign a group project for exercises that use pygame and socket to work together.
