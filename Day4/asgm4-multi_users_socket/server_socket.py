@@ -19,10 +19,6 @@ class Client:
 
 clients = []
 
-def send_message_function(client_socket):
-    while True:
-        message = input("Enter message: ")
-        client_socket.send((message+"\n").encode())
 
 def broadcast_message(message, author):
     """
@@ -37,13 +33,10 @@ def broadcast_message(message, author):
 
 def handle_client_communication(client):
     while True:
-        send_thread = threading.Thread(target=send_message_function, args=(conn,))
-        send_thread.start()
-
         message_received = ''
 
         while True:
-            data = conn.recv(1024)
+            data =  conn.recv(1024)
             if data:
                 if data.decode() == 'exit\n':
                     break

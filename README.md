@@ -22,3 +22,7 @@ Our shorterm goal - Putting together between computer graphic and networking.
 ## Day 4
 - Today, we mainly discuss about multiple users chat.
 - We also assign a group project for exercises that use pygame and socket to work together.
+
+
+## Day 6
+- I learn about multi-processing today.
