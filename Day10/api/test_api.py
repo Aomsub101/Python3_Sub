@@ -16,3 +16,5 @@ response = requests.get(requests_url)
 json_data = response.json()['data']
 
 print(f'{json_data['city']['name']} has current ollution level: {json_data['aqi']}')
+
+# End of file
