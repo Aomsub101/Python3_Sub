@@ -23,6 +23,22 @@ Our shorterm goal - Putting together between computer graphic and networking.
 - Today, we mainly discuss about multiple users chat.
 - We also assign a group project for exercises that use pygame and socket to work together.
 
+## Day 5
+- I didn't join the class today.
 
 ## Day 6
 - I learn about multi-processing today.
+
+## Day 7
+- I learn about plotting graph using pygame.
+
+## Day 8
+- I learn about virtual environment, numpy, and matplotlib.
+
+## Day 9
+- I learn about different way of plotting in matplolib.
+
+## Day 10
+- I learn about K-means algorithm
+- I learn about API
+
